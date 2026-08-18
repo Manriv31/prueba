@@ -1,0 +1,24 @@
+Tengo un cliente que usa Google Workspace con su dominio (dominioA).
+
+Necesitaba hacer un redireccionamiento permanente del sitio web hellohappycasa.com hacia happycasa.com. El dominio estaba configurado con DNS administrados por Cloudflare, pero para realizar correctamente el redireccionamiento desde GoDaddy restablecí la zona DNS para que GoDaddy administrara los registros.
+
+Después de ese cambio, dejaron de funcionar los correos electrónicos del dominio. Posteriormente, el cliente hizo algunas configuraciones y actualmente:
+
+- Los correos se reciben correctamente.
+- Los correos se envían correctamente.
+- Sin embargo, cuando se envía un correo desde una cuenta de dominioA a destinatarios externos (Gmail, Outlook, etc.), el mensaje llega a la carpeta Spam.
+
+Información adicional:
+
+- Tengo acceso a Google Workspace Admin Console.
+- Tengo acceso a GoDaddy DNS.
+- No tengo acceso a Cloudflare.
+- En Google Workspace, en Apps > Google Workspace > Gmail > Authenticate Email, el estado aparece como "Authenticating with DKIM", por lo que DKIM parece estar activo.
+- Sospecho que durante el cambio de DNS se pudieron haber perdido registros relacionados con SPF, DKIM, DMARC u otros registros de autenticación.
+
+Necesito ayuda para identificar qué configuraciones revisar en Google Workspace y en GoDaddy para determinar por qué los correos salientes son enviados a Spam.
+
+Adjunto capturas de:
+1. Registros DNS actuales en GoDaddy.
+2. Configuración de Email Authentication (DKIM) en Google Workspace.
+3. Registros MX, SPF y DMARC si existen.
